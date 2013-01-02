@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>author</th>
+        <th>email</th>
+        <th>content</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+    </tr>
+
+    {% for comment in comments %}
+    <tr>
+        <td>{{ comment.id }}</td>
+        <td>{{ comment.author }}</td>
+        <td>{{ comment.email }}</td>
+        <td>{{ comment.content }}</td>
+        <td>{{ comment.created_at | date("d/m/Y H:i:s") }}</td>
+        <td>{{ comment.updated_at | date("d/m/Y H:i:s") }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
